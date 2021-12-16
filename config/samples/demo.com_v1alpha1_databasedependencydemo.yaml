@@ -1,0 +1,6 @@
+apiVersion: demo.com.demo.com/v1alpha1
+kind: DatabaseDependencyDemo
+metadata:
+  name: databasedependencydemo-sample
+spec:
+  # Add fields here
