@@ -25,17 +25,15 @@ import (
 
 // DatabaseDependencyDemoSpec defines the desired state of DatabaseDependencyDemo
 type DatabaseDependencyDemoSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
-
-	// Foo is an example field of DatabaseDependencyDemo. Edit databasedependencydemo_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	//+kubebuilder:validation:Minimum=0
+	// Size is the size of the deployment
+	Size int32 `json:"size"`
 }
 
 // DatabaseDependencyDemoStatus defines the observed state of DatabaseDependencyDemo
 type DatabaseDependencyDemoStatus struct {
-	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
+	// Nodes are the names of the memcached pods
+	Nodes []string `json:"nodes"`
 }
 
 //+kubebuilder:object:root=true
