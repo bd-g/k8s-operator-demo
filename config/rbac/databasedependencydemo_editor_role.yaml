@@ -1,0 +1,24 @@
+# permissions for end users to edit databasedependencydemoes.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: databasedependencydemo-editor-role
+rules:
+- apiGroups:
+  - database.demo.com
+  resources:
+  - databasedependencydemoes
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - database.demo.com
+  resources:
+  - databasedependencydemoes/status
+  verbs:
+  - get
